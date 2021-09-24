@@ -1,0 +1,26 @@
+<div class="product-image-wrapper">
+  <div class="single-products">
+    <div class="productinfo text-center">
+      <img class="img" src="{{ asset(" images/product/".$product->user_id."/".json_decode($product["image"], true)[0])
+      }}" alt="" />
+      <h2>{{ round($product->price,0) }}$</h2>
+      <p>{{ $product->product_name }}</p>
+      <a href="" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+    </div>
+    <div class="product-overlay">
+      <div class="overlay-content">
+        <p class="id" style="display: none;">{{ $product->id }}</p>
+        <h2>{{ round($product->price,0) }}$</h2>
+        <p><a href="{{ route(" product.show", ["id"=> $product->id]) }}">{{ $product->product_name }}</a></p>
+        <button type="submit" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to
+          cart</button>
+      </div>
+    </div>
+  </div>
+  <div class="choose">
+    <ul class="nav nav-pills nav-justified">
+      <li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+      <li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
+    </ul>
+  </div>
+</div>
